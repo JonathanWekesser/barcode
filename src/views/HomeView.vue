@@ -1,11 +1,25 @@
 <script setup>
 import { ref } from "vue";
 import { StreamBarcodeReader } from "vue-barcode-reader";
+import Swal from 'sweetalert2';
+
+function fireAlertScanned(alertText) {
+  
+  Swal.fire({
+    icon: 'success',
+    title: alertText,
+    color: 'white',
+    background: 'black',
+    showConfirmButton: true,
+    timer: 1500,
+  })
+}
 
 const decodedText = ref("");
 
 const onLoaded = () => {
   console.log("loaded");
+  fireAlertScanned("Barcode has been scanned!")
 };
 
 const onDecode = (text) => {

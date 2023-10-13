@@ -32,3 +32,6 @@ npm run build
 ```sh
 npm install vue-barcode-reader --save
 ```
+```sh
+npm install sweetalert2
+```
