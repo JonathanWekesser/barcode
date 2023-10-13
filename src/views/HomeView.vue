@@ -3,10 +3,8 @@ import { ref } from "vue";
 import { StreamBarcodeReader } from "vue-barcode-reader";
 import Swal from 'sweetalert2';
 
-let lastText = null;
-
 function fireAlertScanned(alertText) {
-  
+  alertText = "You scanned a Barcode\n"+alertText;
   Swal.fire({
     icon: 'success',
     title: alertText,
@@ -25,6 +23,7 @@ const onLoaded = () => {
 
 const onDecode = (text) => {
   decodedText.value = text;
+  fireAlertScanned(text)
 };
 
 </script>
