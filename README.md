@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Unsere eigenen Befehele
+```sh
+npm install vue-barcode-reader --save
+```
