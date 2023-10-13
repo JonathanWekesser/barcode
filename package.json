@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "pinia": "^2.1.6",
+    "sweetalert2": "^11.7.32",
     "vue": "^3.3.4",
     "vue-barcode-reader": "^1.0.3",
     "vue-router": "^4.2.4"
