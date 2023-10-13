@@ -25,7 +25,7 @@ const onLoaded = () => {
 
 const onDecode = (text) => {
   decodedText.value = text;
-  if (text != lastText) {
+  if (text) {
     lastText = text;
     fireAlertScanned("Barcode has been scanned!\n" + text)
   }
