@@ -19,11 +19,11 @@ const decodedText = ref("");
 
 const onLoaded = () => {
   console.log("loaded");
-  fireAlertScanned("Barcode has been scanned!")
 };
 
 const onDecode = (text) => {
   decodedText.value = text;
+  fireAlertScanned("Barcode has been scanned!")
 };
 
 </script>
