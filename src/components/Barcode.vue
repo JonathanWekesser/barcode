@@ -1,7 +1,24 @@
-<script setup>
+<script>
 import { ref } from "vue";
 import { StreamBarcodeReader } from "vue-barcode-reader";
 import Swal from 'sweetalert2';
+
+export default{
+  name: 'App',
+  components: {
+    ref,
+    StreamBarcodeReader,
+  },
+  methods: {
+    getAllProducts(){
+      axios.get("http://localhost:3000/products").then((response)=>{
+        console.log(response);
+      }).catch((error)=>{
+        console.log(error);
+      })
+    },
+  }
+};
 
 function fireAlertScanned(alertText) {
   /*

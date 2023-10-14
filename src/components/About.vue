@@ -26,4 +26,8 @@
     align-items: center;
   }
 }
+
+li>a {
+  color: rgb(121, 121, 226);
+}
 </style>

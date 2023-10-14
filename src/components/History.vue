@@ -1,16 +1,18 @@
 <script>
-  
-  //barcodeList = getAllProducts();
+export default {
+  props: {
+    scannedBarcodes: [],
+  },
+}
 </script>
-
 <template>
   <div class="history">
     <h1>History:</h1>
     <p>
       Hier können Sie die gescannten Barcodes sehen:
     </p>
-    <p>
-      {{ barcodeList }}
+    <p v-for="barcode in scannedBarcodes" :key="barcode.id">
+      {{ barcode.id }} {{ barcode.name }} {{ barcode.value }}
     </p>
   </div>
 </template>

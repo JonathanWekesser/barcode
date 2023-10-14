@@ -1,25 +1,31 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
-import axios from 'axios';
+import { RouterLink, RouterView } from 'vue-router';
+
+import axios from "axios";
+import Bardcode from "./components/Barcode.vue";
+import History from "./components/History.vue";
+import About from "./components/About.vue";
 
 export default{
-  name: 'App',
-  components:{
-    RouterLink,
-    RouterView,
+  data() {
+    return {
+      baseUrl: "http://localhost:3000",
+      scannedBarcodes: [],
+    };
   },
   methods: {
-    getAllProducts(){
-      axios.get("http://localhost:3000/products").then((response)=>{
-        console.log(response);
-      }).catch((error)=>{
-        console.log(error);
-      })
-    },
-  }
-};
-
-
+    addProduct(barcode){
+      this.addEntry({id: barcode});
+      console.log(this.scannedBarcodes);
+    }
+  },
+  mounted() {
+    axios.get(`${this.baseUrl}/products`).then(response => {
+      this.scannedBarcodes = response.data;
+      console.log(this.scannedBarcodes);
+    });
+  },
+}
 </script>
 
 <template>
