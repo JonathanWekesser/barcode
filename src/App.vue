@@ -27,7 +27,7 @@ nav {
   font-size: 15px;
   text-align: center;
   margin-top: 2rem;
-  color:azure;
+  color:rgb(239, 252, 252);
 }
 
 nav a.router-link-exact-active {
@@ -40,7 +40,7 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 5px;
+  padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
 
