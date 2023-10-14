@@ -4,6 +4,11 @@ import { StreamBarcodeReader } from "vue-barcode-reader";
 import Swal from 'sweetalert2';
 
 function fireAlertScanned(alertText) {
+  /*
+  if (inList){
+    id = inList.id;
+  }
+  */
   alertText = "Scannen erfolgreich: \n"+alertText;
   Swal.fire({
     icon: 'success',
@@ -13,6 +18,7 @@ function fireAlertScanned(alertText) {
     showConfirmButton: true,
     timer: 1500,
   })
+  // axios.put(url, alertText);
 }
 
 const decodedText = ref("");
