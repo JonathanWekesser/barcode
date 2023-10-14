@@ -22,20 +22,16 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
-  width: 100%;
-  font-size: 12px;
+  width: 50%;
+  font-size: 15px;
   text-align: center;
   margin-top: 2rem;
+  color:azure;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color:rgb(121, 121, 226);
 }
 
 nav a.router-link-exact-active:hover {
@@ -71,10 +67,9 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
+    
+    font-size: 50px;
+   
     margin-top: 1rem;
   }
 }
