@@ -4,7 +4,7 @@ import { StreamBarcodeReader } from "vue-barcode-reader";
 import Swal from 'sweetalert2';
 
 function fireAlertScanned(alertText) {
-  alertText = "You scanned a Barcode\n"+alertText;
+  alertText = "Scannen erfolgreich: \n"+alertText;
   Swal.fire({
     icon: 'success',
     title: alertText,
@@ -31,7 +31,7 @@ const onDecode = (text) => {
 <template>
   <main>
     <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded"></StreamBarcodeReader>
-    <h2>The decoded value in QR/barcode is</h2>
+    <h2>Der letzte gescannter QR/Barcode:</h2>
     <h2>{{ decodedText }}</h2>
   </main>
 </template>
