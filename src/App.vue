@@ -1,5 +1,25 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import axios from 'axios';
+
+export default{
+  name: 'App',
+  components:{
+    RouterLink,
+    RouterView,
+  },
+  methods: {
+    getAllProducts(){
+      axios.get("http://localhost:3000/products").then((response)=>{
+        console.log(response);
+      }).catch((error)=>{
+        console.log(error);
+      })
+    },
+  }
+};
+
+
 </script>
 
 <template>
