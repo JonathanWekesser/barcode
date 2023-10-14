@@ -1,18 +1,43 @@
 <script>
+  import axios from 'axios';
+
 export default {
-  props: {
-    scannedBarcodes: [],
+  name: 'History',
+  data() {
+    return {
+      products:[]
+    };
   },
+  created() {
+    this.getAllProducts();
+  },
+  methods: {
+  async getAllProducts() {
+    try {
+      const response = await axios.get("http://localhost:3000/products");
+      this.products = response.data;
+    } catch (error) {
+      console.error("Fehler beim Abrufen der Daten:", error);
+    }
+  },
+},
+
+/*  mounted() {
+  this.getAllProducts();
+},*/
+
 }
+  //barcodeList = getAllProducts();
 </script>
+
 <template>
   <div class="history">
     <h1>History:</h1>
     <p>
       Hier können Sie die gescannten Barcodes sehen:
     </p>
-    <p v-for="barcode in scannedBarcodes" :key="barcode.id">
-      {{ barcode.id }} {{ barcode.name }} {{ barcode.value }}
+    <p>
+      {{ products }}
     </p>
   </div>
 </template>
